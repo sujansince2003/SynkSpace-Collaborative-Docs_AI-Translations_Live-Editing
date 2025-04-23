@@ -8,7 +8,7 @@ const serviceKey = require("@/firebase-admin.json")
 
 let app: App;
 
-if (getApps.length === 0) {
+if (getApps().length === 0) {
     app = initializeApp({
         credential: cert(serviceKey)
     })
