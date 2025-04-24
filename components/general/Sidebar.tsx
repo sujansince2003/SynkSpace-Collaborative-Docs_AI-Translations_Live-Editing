@@ -78,7 +78,7 @@ const Sidebar = () => {
     setGroupedData(grouped);
   }, [data]);
 
-  console.log("data is ", data);
+  // console.log("data is ", data);
 
   const menuOptions = (
     <>
@@ -101,6 +101,16 @@ const Sidebar = () => {
           </>
         )}
       </div>
+      {groupedData.editor.length > 0 && (
+        <>
+          <h2 className="text-gray-500 font-semibold text-sm">
+            Shared with me
+          </h2>
+          {groupedData.editor.map((doc) => (
+            <Sidebaroption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
+          ))}
+        </>
+      )}
     </>
   );
 
