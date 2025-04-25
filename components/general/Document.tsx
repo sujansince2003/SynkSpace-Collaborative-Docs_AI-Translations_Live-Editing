@@ -9,6 +9,7 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import CollabEditor from "./CollabEditor";
 import useOwner from "@/lib/useOwner";
 import DeleteDocument from "./DeleteDocument";
+import InviteUser from "./InviteUser";
 
 // update title
 //invite other users
@@ -54,6 +55,7 @@ const Document = ({ id }: { id: string }) => {
         </form>
         {isOwner && (
           <>
+            <InviteUser />
             <DeleteDocument />
           </>
         )}
