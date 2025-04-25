@@ -1,16 +1,17 @@
 import RoomProvider from "@/components/general/RoomProvider";
 import { auth } from "@clerk/nextjs/server";
 
-const Doclayout = ({
+type Params = Promise<{ id: string }>;
+const Doclayout = async ({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { id: string };
+  params: Params;
 }) => {
   auth.protect();
 
-  const { id } = params;
+  const { id } = await params;
 
   return <RoomProvider roomId={id}>{children}</RoomProvider>;
 };
