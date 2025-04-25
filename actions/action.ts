@@ -75,3 +75,24 @@ export async function DeleteDocumentAction(roomId: string) {
 
 
 }
+
+
+export async function HandleInviteUserAction(roomId: string, email: string) {
+    auth.protect();
+    try {
+        await adminDb.collection("users").doc(email).collection("rooms").doc(roomId).set({
+            userId: email,
+            role: "editor",
+            createdAt: new Date(),
+            roomId
+        })
+
+
+        return { success: true }
+
+
+    } catch (error) {
+        console.log(error);
+        return { success: false }
+    }
+}
