@@ -40,7 +40,7 @@ const Followpointer = ({
         width="48"
         height="48"
         viewBox="0 0 24 24"
-        className={`h-6 w-6 text-[${color}] transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px] stroke-[${color}] `}
+        className={`h-6 w-6 text-[${color}] transform  -translate-x-[12px] -translate-y-[10px] stroke-[${color}] `}
       >
         <path fill="#000" d="M4.5.79v22.42l6.56-6.57h9.29L4.5.79z"></path>
       </svg>
