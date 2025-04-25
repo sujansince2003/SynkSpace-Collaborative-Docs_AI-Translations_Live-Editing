@@ -43,3 +43,5 @@ next-env.d.ts
 # firebase
 
 firebase-admin.json
+
+settings.json
