@@ -9,6 +9,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import Link from "next/link";
+import Breadcrumbs from "./Breadcrumbs";
 const Header = () => {
   const { user } = useUser();
 
@@ -17,13 +18,14 @@ const Header = () => {
       <Link href="/">
         <h1 className="text-xl font-extrabold">SYNCSPACE</h1>
       </Link>
-
+      <Breadcrumbs />
       <div className="flex items-center gap-3">
         {user && (
           <>
             <p className="font-semibold text-sm">{user?.firstName}</p>
           </>
         )}
+
         <>
           <SignedOut>
             <SignInButton>Login</SignInButton>
