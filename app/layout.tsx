@@ -4,7 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/general/Header";
 import Sidebar from "@/components/general/Sidebar";
-
+import { Toaster } from "react-hot-toast";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -36,6 +36,7 @@ export default function RootLayout({
           sm:px-6
           lg:px-8`}
         >
+          <Toaster />
           <Header />
           <div className="flex min-h-screen">
             <Sidebar />
