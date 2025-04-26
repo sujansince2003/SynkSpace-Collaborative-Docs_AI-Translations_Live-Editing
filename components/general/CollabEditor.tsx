@@ -12,6 +12,8 @@ import { useCreateBlockNote } from "@blocknote/react";
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/shadcn/style.css";
 import stringToColor from "@/lib/stringTocolor";
+import TranslateDoc from "./TranslateDoc";
+import ChatToDoc from "./ChatToDoc";
 
 type EditorProps = {
   doc: Y.Doc;
@@ -71,7 +73,10 @@ const CollabEditor = () => {
     <div className="max-w-6xl mx-auto ">
       <div className="flex items-center gap-2 justify-end mb-10">
         {/* translate */}
+        <TranslateDoc doc={doc} />
+
         {/* chat */}
+        <ChatToDoc doc={doc} />
 
         {/* darkmode */}
         <Button
