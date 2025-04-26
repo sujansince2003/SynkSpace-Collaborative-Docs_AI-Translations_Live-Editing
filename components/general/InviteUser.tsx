@@ -9,9 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-// import { Label } from "@/components/ui/label";
 import { Button } from "../ui/button";
-
 import { usePathname } from "next/navigation";
 import toast from "react-hot-toast";
 import { HandleInviteUserAction } from "@/actions/action";
@@ -43,7 +41,7 @@ const InviteUser = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button variant="outline">Invite</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
