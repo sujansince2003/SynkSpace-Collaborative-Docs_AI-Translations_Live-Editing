@@ -96,3 +96,17 @@ export async function HandleInviteUserAction(roomId: string, email: string) {
         return { success: false }
     }
 }
+
+export async function RemoveUserFromDoc(roomId: string, email: string) {
+    auth.protect();
+
+    try {
+        await adminDb.collection("users").doc(email).collection("rooms").doc(roomId).delete();
+        return { success: true }
+
+    } catch (error) {
+        console.log(error);
+        return { success: false }
+    }
+
+}
