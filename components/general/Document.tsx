@@ -10,11 +10,8 @@ import CollabEditor from "./CollabEditor";
 import useOwner from "@/lib/useOwner";
 import DeleteDocument from "./DeleteDocument";
 import InviteUser from "./InviteUser";
-
-// update title
-//invite other users
-//manage users and avatars
-// collaborative editor
+import ManageUsers from "./ManageUsers";
+import UserAvatars from "./UserAvatars";
 
 const Document = ({ id }: { id: string }) => {
   const [input, setInput] = useState("");
@@ -44,14 +41,10 @@ const Document = ({ id }: { id: string }) => {
     <div className="bg-white flex-1 h-full p-5">
       <div className="max-w-4xl mx-auto space-x-2 flex justify-between pb-6">
         <form className="flex flex-1 space-x-2 " onSubmit={updateTitle}>
-          {/* update title and invite users */}
-
           <Input value={input} onChange={(e) => setInput(e.target.value)} />
           <Button disabled={isUpdating}>
             {isUpdating ? "Updating" : "Update"}
           </Button>
-
-          {/* owner roles */}
         </form>
         {isOwner && (
           <>
@@ -61,10 +54,12 @@ const Document = ({ id }: { id: string }) => {
         )}
       </div>
 
-      <div>{/* manaage users and avatars */}</div>
+      <div className="flex max-w-4xl mx-auto justify-between items-center mb-5">
+        <ManageUsers />
+        <UserAvatars />
+      </div>
       <hr className="pb-10" />
       <CollabEditor />
-      {/* collaborative editing */}
     </div>
   );
 };
