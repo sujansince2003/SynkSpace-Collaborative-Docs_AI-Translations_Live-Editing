@@ -3,8 +3,11 @@ import { getFirestore } from "firebase-admin/firestore";
 
 
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const serviceKey = require("@/firebase-admin.json")
+
+
+// const serviceKey = require("@/firebase-admin.json")
+
+const serviceKey = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_SERVICE_KEY as string)
 
 let app: App;
 
