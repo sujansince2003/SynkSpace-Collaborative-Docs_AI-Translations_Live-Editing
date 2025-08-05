@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 // import Header from "@/components/general/Header";
-// import Sidebar from "@/components/general/Sidebar";
+import Sidebar from "@/components/general/Sidebar";
 import { Toaster } from "react-hot-toast";
 import ThemeProvider from "./Theme-provider";
 const geistSans = Geist({
@@ -45,12 +45,12 @@ export default function RootLayout({
           >
             <Toaster />
             {/* <Header /> */}
-            {/* <div className="flex min-h-screen">
-            <Sidebar />
-            <div className=" border-2 flex-1 p-4 bg-gray-100 overflow-y-auto">
-              {children}
+            <div className="flex min-h-screen">
+              <Sidebar />
+              <div className=" border-2 flex-1 p-4 bg-gray-100 overflow-y-auto">
+                {children}
+              </div>
             </div>
-          </div> */}
             {children}
           </ThemeProvider>
         </body>
