@@ -30,7 +30,7 @@ interface Roomdocument extends DocumentData {
 }
 
 const Sidebar = () => {
-  const { user } = useUser();
+  const { user, isLoaded } = useUser();
 
   const [groupedData, setGroupedData] = useState<{
     owner: Roomdocument[];
@@ -41,11 +41,12 @@ const Sidebar = () => {
   });
 
   const [data, loading, error] = useCollection(
-    user &&
-      query(
-        collectionGroup(firedb, "rooms"),
-        where("userId", "==", user.emailAddresses[0].toString())
-      )
+    isLoaded && user
+      ? query(
+          collectionGroup(firedb, "rooms"),
+          where("userId", "==", user.emailAddresses[0]?.toString())
+        )
+      : null
   );
 
   useEffect(() => {
@@ -77,9 +78,6 @@ const Sidebar = () => {
     );
     setGroupedData(grouped);
   }, [data]);
-
-  // console.log("data is ", data);
-
   const menuOptions = (
     <>
       <CreateDocBtn />
