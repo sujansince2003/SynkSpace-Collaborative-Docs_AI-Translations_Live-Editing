@@ -76,7 +76,7 @@ const ChatToDoc = ({ doc }: { doc: Y.Doc }) => {
         <form className="flex space-x-2" onSubmit={handleChat}>
           <Input
             type="text"
-            placeholder="Email"
+            placeholder="Enter your question"
             className="w-full"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
