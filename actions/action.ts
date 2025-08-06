@@ -16,7 +16,7 @@ type CustomClaims = JwtPayload & {
     firstname: string;
 };
 
-export async function CreateDocument() {
+export async function CreateDocument(docName: string) {
     const { userId, redirectToSignIn } = await auth()
 
     if (!userId) return redirectToSignIn();
@@ -33,7 +33,7 @@ export async function CreateDocument() {
     const claims = sessionClaims as unknown as CustomClaims;
 
     const docRef = await adminDb.collection("documents").add({
-        title: "new doc",
+        title: docName || "Untitled Document",
     });
 
     await adminDb.collection("users").doc(claims.email).collection("rooms").doc(docRef.id).set({
