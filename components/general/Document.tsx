@@ -48,7 +48,7 @@ const Document = ({ id }: { id: string }) => {
         </form>
         {isOwner && (
           <>
-            <InviteUser />
+            {/* <InviteUser /> */}
             <DeleteDocument />
           </>
         )}
@@ -56,7 +56,14 @@ const Document = ({ id }: { id: string }) => {
 
       <div className="flex max-w-4xl mx-auto justify-between items-center mb-5">
         <ManageUsers />
-        <UserAvatars />
+        <div className="flex items-center space-x-2">
+          <UserAvatars />
+          {isOwner && (
+            <>
+              <InviteUser />
+            </>
+          )}
+        </div>
       </div>
       <hr className="pb-10" />
       <CollabEditor />
