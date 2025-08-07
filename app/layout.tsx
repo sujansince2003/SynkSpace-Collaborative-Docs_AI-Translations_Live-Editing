@@ -25,40 +25,40 @@ const bricolageGrotesque = Bricolage_Grotesque({
   display: "swap",
 });
 
-// Metadata for SEO
+// SEO Metadata for SyncSpace
 export const metadata: Metadata = {
   title: {
-    default: "DocuChat — Chat with your Docs",
-    template: "%s | DocuChat",
+    default: "SyncSpace — Collaborate Smarter",
+    template: "%s | SyncSpace",
   },
   description:
-    "DocuChat is an intelligent document chat assistant. Upload your documents and get instant answers from them. Powered by AI.",
+    "SyncSpace is a modern document collaboration platform powered by AI. Work with your team in real-time, translate effortlessly, and get instant insights from your content.",
+  metadataBase: new URL("https://syncspace.app"), // ← Replace with your actual domain
   icons: {
     icon: "/favicon.ico",
   },
-  metadataBase: new URL("https://docuchat.khatrisujan.com.np"),
   openGraph: {
-    title: "DocuChat",
+    title: "SyncSpace — Real-Time Collaborative Workspace",
     description:
-      "Upload your documents and ask anything about them — AI-powered answers from your own files.",
-    url: "https://docuchat.khatrisujan.com.np",
-    siteName: "DocuChat",
+      "Experience AI-powered collaboration, seamless translation, and powerful document editing — all in one place.",
+    url: "https://syncspace.app",
+    siteName: "SyncSpace",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image.png", // ← Replace with actual image
         width: 1200,
         height: 630,
-        alt: "DocuChat Open Graph Image",
+        alt: "SyncSpace Open Graph Image",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DocuChat",
+    title: "SyncSpace — Collaborate Smarter",
     description:
-      "Upload your docs and get instant answers — your personal AI document assistant.",
-    images: ["/opengraph-image.png"],
+      "Real-time editing. AI assistance. Seamless translation. SyncSpace redefines how teams create together.",
+    images: ["/opengraph-image.png"], // ← Replace with actual image
   },
 };
 
