@@ -41,7 +41,7 @@ const InviteUser = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Invite</Button>
+        <Button>Invite</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
